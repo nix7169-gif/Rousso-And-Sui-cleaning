@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rousso & Sui | Premium Exterior Cleaning</title>
+  <meta name="description" content="Rousso & Sui offers premium window cleaning, power washing, and exterior detailing in La Cañada and nearby neighborhoods." />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.5;
+    }
+    a { text-decoration: none; color: inherit; }
+    .container {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: 0.2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-dark {
+      background: #111;
+      color: #fff;
+    }
+    .btn-light {
+      border: 1px solid #d6d6d6;
+      background: #fff;
+      color: #111;
+    }
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #ececec;
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0;
+    }
+    .brand-small {
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #666;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+    .brand-main {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 800;
+    }
+    .hero {
+      background: linear-gradient(135deg, #f4f4f4, #ffffff 55%, #f0f0f0);
+      padding: 72px 0 64px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .pill {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #d7d7d7;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #555;
+      margin-bottom: 18px;
+      background: #fff;
+    }
+    h1 {
+      font-size: clamp(40px, 6vw, 68px);
+      line-height: 1.02;
+      margin: 0;
+      letter-spacing: -0.04em;
+    }
+    .hero p.lead {
+      font-size: 18px;
+      color: #555;
+      max-width: 640px;
+      margin: 18px 0 0;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e9e9e9;
+      border-radius: 26px;
+      padding: 24px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+    }
+    .card.big { grid-column: 1 / -1; }
+    .section {
+      padding: 72px 0;
+    }
+    .section-alt {
+      background: #f8f8f8;
+    }
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #777;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+    h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin: 0;
+      letter-spacing: -0.03em;
+    }
+    .subtext {
+      margin-top: 14px;
+      color: #5f5f5f;
+      font-size: 18px;
+      max-width: 760px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .price {
+      font-size: 48px;
+      font-weight: 900;
+      margin: 6px 0 0;
+    }
+    .service-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .bullet {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      margin-top: 12px;
+      color: #444;
+      font-size: 15px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: #111;
+      margin-top: 5px;
+      flex: 0 0 auto;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .stack {
+      display: grid;
+      gap: 14px;
+    }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .dark {
+      background: #111;
+      color: #fff;
+    }
+    .dark .eyebrow { color: #aaa; }
+    .dark .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+    }
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      background: #f8f8f8;
+      border: 1px solid #ebebeb;
+      border-radius: 28px;
+      padding: 32px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.04);
+    }
+    .contact-panel {
+      background: #fff;
+      border: 1px solid #eaeaea;
+      border-radius: 24px;
+      padding: 24px;
+    }
+    .label {
+      color: #6a6a6a;
+      font-size: 14px;
+      margin: 0;
+    }
+    .value {
+      font-size: 20px;
+      font-weight: 700;
+      margin: 6px 0 18px;
+    }
+    footer {
+      border-top: 1px solid #ececec;
+      padding: 24px 0;
+      color: #666;
+      font-size: 14px;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    @media (max-width: 900px) {
+      .hero-grid,
+      .split,
+      .contact-box,
+      .grid-3,
+      .service-list,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+      .hero { padding-top: 48px; }
+      .topbar-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div>
+        <p class="brand-small">Rousso & Sui</p>
+        <p class="brand-main">Premium exterior cleaning for homes in La Cañada and nearby areas.</p>
+      </div>
+      <a class="btn btn-dark" href="#quote">Get a Quote</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="pill">Serving La Cañada and nearby areas with premium window and exterior cleaning</div>
+        <h1>Make your property look cleaner without lifting a finger.</h1>
+        <p class="lead">Rousso & Sui helps homeowners keep their windows, entry glass, and exterior surfaces looking sharp with reliable service, straightforward pricing, and fast communication.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="#services">View Services</a>
+          <a class="btn btn-light" href="#about">Why Choose Us</a>
+        </div>
+      </div>
+      <div class="hero-cards">
+        <div class="card big">
+          <p class="eyebrow">Fast, local, dependable</p>
+          <h3 style="margin:0;font-size:30px;letter-spacing:-0.03em;">Built for homeowners who want clean results and no headaches.</h3>
+        </div>
+        <div class="card">
+          <div class="price" style="font-size:44px;">3</div>
+          <p style="margin:8px 0 0;color:#555;">Core services for a cleaner home exterior</p>
+        </div>
+        <div class="card">
+          <div class="price" style="font-size:44px;">Easy</div>
+          <p style="margin:8px 0 0;color:#555;">Quotes, scheduling, and communication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section">
+    <div class="container">
+      <p class="eyebrow">Packages</p>
+      <h2>Simple pricing that starts strong</h2>
+      <p class="subtext">Use these as starting prices, then adjust based on home size, difficulty, and add-ons.</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <p class="eyebrow">Starting at</p>
+          <div class="price">$79</div>
+          <h3 style="margin:12px 0 0;font-size:28px;">Basic Clean</h3>
+          <p style="color:#555; margin-top:12px;">Great entry-level exterior clean for smaller jobs.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Starting at</p>
+          <div class="price">$109</div>
+          <h3 style="margin:12px 0 0;font-size:28px;">Deluxe Clean</h3>
+          <p style="color:#555; margin-top:12px;">A stronger all-around package for a more polished result.</p>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Starting at</p>
+          <div class="price">$149</div>
+          <h3 style="margin:12px 0 0;font-size:28px;">Premium Package</h3>
+          <p style="color:#555; margin-top:12px;">Best for homes that need the full premium refresh.</p>
+        </div>
+      </div>
+
+      <div style="margin-top:56px;">
+        <p class="eyebrow">Services</p>
+        <h2>What we do</h2>
+        <p class="subtext">Simple service offerings that help your home look cleaner, sharper, and more polished.</p>
+
+        <div class="service-list">
+          <div class="card">
+            <h3 style="margin:0;font-size:28px;">Window Cleaning</h3>
+            <p style="color:#555; margin-top:12px;">Interior and exterior window cleaning for homes that want a clear, polished look.</p>
+            <div class="bullet"><span class="dot"></span><span>Streak-free finish</span></div>
+            <div class="bullet"><span class="dot"></span><span>Screen and sill wipe-down</span></div>
+            <div class="bullet"><span class="dot"></span><span>One-time or recurring service</span></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0;font-size:28px;">Power Washing</h3>
+            <p style="color:#555; margin-top:12px;">Surface cleaning for driveways, patios, and exterior areas that need a brighter, cleaner finish.</p>
+            <div class="bullet"><span class="dot"></span><span>Concrete and pavement cleaning</span></div>
+            <div class="bullet"><span class="dot"></span><span>Curb appeal boost</span></div>
+            <div class="bullet"><span class="dot"></span><span>Fast turnaround</span></div>
+          </div>
+          <div class="card">
+            <h3 style="margin:0;font-size:28px;">Exterior Detailing</h3>
+            <p style="color:#555; margin-top:12px;">Detail-focused cleaning for entry glass, exterior surfaces, and visible areas that need a premium refresh.</p>
+            <div class="bullet"><span class="dot"></span><span>Sharper overall appearance</span></div>
+            <div class="bullet"><span class="dot"></span><span>Premium home presentation</span></div>
+            <div class="bullet"><span class="dot"></span><span>Great before events or guests</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section section-alt">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Why us</p>
+        <h2>A small company feel with professional-level service.</h2>
+        <p class="subtext">We keep things straightforward: quick responses, honest pricing, and work that makes a visible difference. Whether it is one service or a full exterior refresh, the goal is the same every time — leave the property looking better than when we arrived.</p>
+      </div>
+      <div class="stack">
+        <div class="card"><strong>Clear communication</strong></div>
+        <div class="card"><strong>Reliable scheduling</strong></div>
+        <div class="card"><strong>Attention to detail</strong></div>
+        <div class="card"><strong>Local, customer-first service</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">How it works</p>
+      <h2>Book in three easy steps</h2>
+      <div class="steps">
+        <div class="card">
+          <p class="eyebrow">Step 1</p>
+          <h3 style="margin:0;font-size:26px;">Request a quick quote</h3>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Step 2</p>
+          <h3 style="margin:0;font-size:26px;">Pick a time that works for you</h3>
+        </div>
+        <div class="card">
+          <p class="eyebrow">Step 3</p>
+          <h3 style="margin:0;font-size:26px;">We show up and get it done right</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container">
+      <p class="eyebrow">Reviews</p>
+      <h2>What customers say</h2>
+      <div class="grid-3">
+        <div class="card">
+          <p style="font-size:18px; line-height:1.8; margin:0;">“Super easy to book, showed up on time, and everything looked way better than I expected.”</p>
+          <p class="eyebrow" style="margin-top:20px;">Local Homeowner</p>
+        </div>
+        <div class="card">
+          <p style="font-size:18px; line-height:1.8; margin:0;">“Fair pricing, fast work, and really professional service from start to finish.”</p>
+          <p class="eyebrow" style="margin-top:20px;">Repeat Customer</p>
+        </div>
+        <div class="card">
+          <p style="font-size:18px; line-height:1.8; margin:0;">“The property looked noticeably cleaner right after the visit. Definitely using them again.”</p>
+          <p class="eyebrow" style="margin-top:20px;">Neighborhood Client</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote" class="section">
+    <div class="container">
+      <div class="contact-box">
+        <div>
+          <p class="eyebrow">Free quote</p>
+          <h2>Ready to get started?</h2>
+          <p class="subtext">Send over your address, the services you want, and any photos if needed. We will get you a fast quote and help you set a time.</p>
+        </div>
+        <div class="contact-panel">
+          <p class="label">Phone</p>
+          <p class="value">(323) 853-2383</p>
+          <p class="label">Contact</p>
+          <p class="value">Call or text for a quote</p>
+          <p class="label">Service Area</p>
+          <p class="value">La Cañada area and nearby neighborhoods</p>
+          <a class="btn btn-dark" href="tel:3238532383">Call Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Rousso & Sui. All rights reserved.</div>
+      <div>Window Cleaning • Power Washing • Exterior Detailing</div>
+    </div>
+  </footer>
+</body>
+</html>
